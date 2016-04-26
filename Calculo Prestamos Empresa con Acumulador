@@ -1,0 +1,44 @@
+// Calculo Prestamos Empresa.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include <string>
+
+using namespace std;
+
+void main()
+{
+	int aux, codigo, numprestamo,i;
+	float  montoprestamo,montototal;
+	string nombre;
+	montoprestamo=0;
+	cout << "Ingrese el Codigo del empleado:  ";
+	cin  >> codigo;
+	while (codigo!=0)
+	{
+		aux=codigo;
+		montototal=0;
+		
+		while (aux==codigo)
+		{
+		
+			cout << "Ingrese el Nombre del Empleado:  ";
+		    cin  >> nombre;
+		    cout << "Ingrese el numero de Prestamos:  ";
+		    cin  >> numprestamo;
+			for (i=1;i<=numprestamo;i++)
+			{
+		         cout << "Ingrese el Monto del prestamo:  ";
+		         cin  >> montoprestamo;
+		         montototal=montototal+montoprestamo;
+			}
+			 cout << "Ingrese el codigo del empleado:  ";
+		     cin  >> codigo;
+		}
+		cout << "Empleado:  " << aux << "Monto de Empleado:  " << montototal << endl;
+		montototal=montototal+montoprestamo;
+	}
+	getch();
+}
