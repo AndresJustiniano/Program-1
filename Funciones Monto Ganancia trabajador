@@ -1,0 +1,26 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+float mont_gan (float n, float c); //prototipo de la funcion
+
+int main()
+{
+    float numhoras, costhoras, total;
+	cout << "Ingrese la cantidad de horas trabajadas:  ";
+	cin  >> numhoras;
+	cout << "Ingrese el costo por hora:  ";
+	cin  >> costhoras;
+	total= mont_gan(numhoras,costhoras);
+	cout << "El Total ganado por el trabajador es:  " << total ;
+	getch();
+	return 0;
+}
+
+float mont_gan (float n, float c)
+{ 
+	float t=n*c;
+	return t;
+}
