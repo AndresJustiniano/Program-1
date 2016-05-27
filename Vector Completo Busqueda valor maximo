@@ -1,24 +1,23 @@
 #include "stdafx.h"
 #include <iostream>
 #include "conio.h"
-#define max 100
+#include <stdlib.h>
+#define MAX 100
+
 using namespace std;
-void cargar (double a[], int tam);
-void mostrar(double a[], int tam);
-void buscar(double a[], int tam);
+void cargar (int V[MAX],int n);
+void mostrar (int V[MAX],int n);
+int maxval (int V[MAX], int n);
+
 
 void main()
-{   
-	double f,N[max];
-	int n,opcion;
-	float mayor=0,nmayor;
-	do {
-		
-		cout << "=========================================================" << endl;
+{
+	int V[MAX],n,opcion,maxvalor;
+    do{
+	    cout << "=========================================================" << endl;
 	    cout << "Ingrese la Cantidad de Elementos que almacenara el vector" << endl;
 	    cin  >> n;
-
-	}while(n<=0||n>max);
+	}while(n<=0||n>MAX);
 	    
 	do {
 	    cout << "=========================================================" << endl;
@@ -34,19 +33,25 @@ void main()
 		{
 		case 1: 
 			{
-				cargar (N,n);
+				cargar (V,n);
+				system("cls");
 				break;
 			}
 		
 		case 2:
 			{
-				mostrar (N,n);
+				mostrar (V,n);
+				getch();
+				system("cls");
 		        break;
 			}
 		
 		case 3:
 			{
-				buscar (N,n);
+				maxvalor=maxval (V,n);
+				cout << "El valor maximo en el vector es:  " << maxvalor << endl;
+				getch();
+				system("cls");
 				break;
 			}
 		case 0:
@@ -57,6 +62,8 @@ void main()
 		default:
 			{
 				cout << " La opcion introducida es invalida " << endl;
+				getch();
+				system("cls");
 				break;
 			}
 		}
@@ -64,34 +71,33 @@ void main()
 	getch();
 }
 
-void cargar(double a[],int tam)
+void cargar (int V[MAX], int n)
 {
-	cout << "Introduzca los datos del vector" << endl;
-	for (int i=0;i<tam;i++)
+	int i;
+	for (i=0;i<n;i++)
 	{
-		cout << "a["<<i<<"]= ";
-		cin  >> a[i];
+		cout << " V[" << i << "]=  ";
+		cin >> V[i];
 	}
 }
 
-void mostrar(double a[],int tam)
+void mostrar (int V[MAX], int n)
 {
-	cout << "Valores del vector" << endl;
-	for(int i=0;i<tam;i++)
+	int i;
+	for (i=0;i<n;i++)
 	{
-		cout << "a["<<i<<"]= " << a[i] << endl;
+		cout << " V[" << i << "]=  " << V[i] << endl;
 	}
 }
 
-void buscar (double a[],int tam)
-{    
-	cout << "Elemento Mayor del Vector" << endl;
-	for(int i=0;i<tam;i++)
+int maxval (int V[MAX], int n)
+{
+	int i,may;
+	may=V[0];
+	for (i=1; i<n; i++)
 	{
-		if (a[i]>mayor)
-		{   
-			mayor=a[i];
-	    }	
-    cout << "El elemento mayor del vector es :" << mayor << endl;
+		if (V[i]>may)
+			may=V[i];
 	}
+	return (may);
 }
