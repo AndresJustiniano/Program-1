@@ -1,0 +1,48 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+void main()
+{
+	int zona,norte,sur,este,oeste,centro ;
+	do
+	{
+	    cout << "==============================================================" << endl;
+	    cout << "                     Medical- Finder                          " << endl;
+	    cout << "Introduzca una Zona para Buscar Asistencia medica en la misma." << endl;
+	    cout << "1.- Zona Centro. " << endl;
+		cout << "2.- Zona Norte. " << endl;
+	    cout << "3.- Zona Sur. " << endl;
+	    cout << "4.- Zona Este. " << endl;
+		cout << "5.- Zona Oeste. " << endl;
+	    cout << "0.- Salir. " << endl;
+	    cout << "Zona: ";
+	    cin >> zona;
+	    cout << "==============================================================" << endl;
+		if (zona==1)
+		{
+			cout << "Zona Centro." << endl;
+			cout << "1.- Clinica Incor. " << endl;
+			cout << "2.- Clinica Foianini. " << endl;
+			cout << "0.- Volver . " << endl;
+			cout << "Introduzca el Centro Medico: ";
+			cin >> centro;
+			cout << "=============================================================" << endl;
+			if (centro==1)
+			{
+				cout << "Clinica Incor. " << endl;
+				cout << "Doctor Edgar Aliaga." << endl;
+				cout << "Pediatra. "<< endl;
+				cout << "Consultorio 5. " << endl;
+				cout << "Piso 3. " << endl;
+				cout << "Telefono: 3458599. " << endl;
+				cout << "Horario: 10:30 AM a 02:00 PM. " << endl;
+				cout << "============================================================" << endl;
+			}
+			getch();
+		}
+		getch();
+	}while (zona !=0);
+}
